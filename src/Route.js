@@ -2,7 +2,8 @@ import { parseRoute } from "./parseRoute"
 
 export function Route(props) {
   var location = props.location || window.location
-  var match = parseRoute(props.path, location.pathname, {
+  var hashPathname = location.hash.substring(2);
+  var match = parseRoute(props.path, hashPathname, {
     exact: !props.parent
   })
 
